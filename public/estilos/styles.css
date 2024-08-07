@@ -404,18 +404,20 @@ input[type="checkbox"]:checked ~ nav ul li:nth-child(7) {
       }
     
     .title-card {
-        font-size: 16px; /* Ajusta el tamaño de la fuente */
+        font-size: 14px; /* Ajusta el tamaño de la fuente */
       }
     
     .description-card {
-        font-size: 14px; /* Ajusta el tamaño del texto de la descripción */
+        font-size: 11px; /* Ajusta el tamaño del texto de la descripción */
         margin-left: 5px; /* Ajusta el margen izquierdo */
+        height: 30px;
       }
     
     .price-card {
         font-size: 14px; /* Reduce el tamaño de la fuente del precio */
         padding: 10px 0; /* Ajusta el padding */
         margin-left: 5px; /* Ajusta el margen izquierdo */
+        height: 40px;
       }
     }
 
@@ -503,17 +505,18 @@ input[type="checkbox"]:checked ~ nav ul li:nth-child(7) {
       } 
     .description-card {
         width: 100%; /* Asegura que el contenido interno ocupe el ancho completo de la card */
+        height: 20px;
       } 
     .price-card {
         padding: 10px; /* Ajusta el padding según sea necesario */
         border-top: 1px solid #ddd;
-        font-size: 14px; /* Ajusta el tamaño de la fuente del precio */
+        font-size: 12px; /* Ajusta el tamaño de la fuente del precio */
         font-weight: bold;
         margin: 0; /* Elimina el margen alrededor del contenedor */
         display: flex; /* Usa flexbox para el contenedor */
         align-items: center; /* Centra verticalmente el contenido */
         justify-content: flex-start; /* Alinea el contenido a la izquierda */
-        height: 60px; /* Asegura suficiente altura para centrar verticalmente */
+        height: 30px; /* Asegura suficiente altura para centrar verticalmente */
     }
     
     

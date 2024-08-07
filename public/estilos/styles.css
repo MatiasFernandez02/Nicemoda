@@ -31,6 +31,7 @@ header {
     box-shadow: inset;
 }
 
+
 .titulo { 
     margin: 0;
     position: absolute;
@@ -42,6 +43,7 @@ header {
     position: absolute;
     left: 20px; /* Mantiene el botón del menú en la esquina izquierda */
 }
+
 
 .iconos-header {
     position: absolute;
@@ -115,15 +117,15 @@ li {
 
 .offcanvas-menu nav {
     position: fixed;
-    margin-top: 60px;
-    height: 100%;
-    width: 350px;
-    left: -350px;
+    top: 120px; /* La misma altura que el header */
+    width: 350px; /* Ajusta según tus necesidades */
+    height: calc(100% - 120px); /* Calcula la altura restante de la pantalla */
+    left: -350px; /* O lo que necesites según el diseño */
     overflow: hidden;
     background: #FFD4DB;
     transition: 0.3s ease;
     padding: 40px 30px;
-}
+}   
 
 .offcanvas-menu nav > div {
     display: flex;
@@ -169,7 +171,6 @@ li {
 
 .offcanvas-menu nav > ul {
     margin-top: 30px;
-    counter-reset: nav-link-count;
 }
 
 .offcanvas-menu nav ul li {
@@ -178,7 +179,6 @@ li {
     transform: translateX(-30px);
     opacity: 0;
     transition: 0.9s ease;
-    counter-increment: nav-link-count;
 }
 
 .offcanvas-menu nav ul li a {
@@ -189,13 +189,12 @@ li {
     display: block;
 }
 
-.offcanvas-menu nav ul li a::after {
-    content: " : " counter(nav-link-count);
-}
 
 .offcanvas-menu nav ul li:hover {
     animation: hover 0.5s;
 }
+
+
 
 input[type="checkbox"] {
     display: none;
@@ -331,17 +330,50 @@ input[type="checkbox"]:checked ~ nav ul li:nth-child(7) {
     .offcanvas-menu > label.toogle-open {
         width: 30px; /* Ajusta el ancho del botón */
         height: 30px; /* Ajusta la altura del botón */
-        top: 20px; /* Ajusta la posición superior */
+        top: 25px; /* Ajusta la posición superior */
         left: 30px; /* Ajusta la posición izquierda */
       }
     
-      .offcanvas-menu > label.toogle-open span,
-      .offcanvas-menu > label.toogle-open span::before,
-      .offcanvas-menu > label.toogle-open span::after {
+    .offcanvas-menu > label.toogle-open span,
+    .offcanvas-menu > label.toogle-open span::before,
+    .offcanvas-menu > label.toogle-open span::after {
         height: 3px; /* Ajusta el grosor de las barras */
         width: 30px; /* Ajusta el ancho de las barras */
       }
+      .offcanvas-menu > label span::before {
+        transform: translateY(-10px); /* Reduce la separación superior */
+    }
+    .offcanvas-menu > label span::after {
+        transform: translateY(10px); /* Reduce la separación inferior */
+    }
 
+    .offcanvas-menu nav {
+        top: 80px;
+        height: 100%;
+        width: 250px; /* Reduce el ancho del menú */
+        left: -250px; /* Ajusta la posición para que el menú esté fuera de la vista */
+        padding: 30px 20px; /* Reduce el padding interno del menú */
+    }
+
+    .offcanvas-menu nav > div a {
+        font-size: 2rem; /* Reduce el tamaño de la fuente */
+    }
+
+    .offcanvas-menu nav ul li a {
+        font-size: 2rem; /* Ajusta el tamaño de la fuente de los elementos del menú */
+    }
+
+    .offcanvas-menu nav label {
+        width: 25px; /* Ajusta el ancho del botón */
+        height: 25px; /* Ajusta la altura del botón */
+    }
+
+    .offcanvas-menu nav label span,
+    .offcanvas-menu nav label span::before,
+    .offcanvas-menu nav label span::after {
+        height: 2px; /* Reduce el grosor de las barras */
+        width: 25px; /* Ajusta el ancho de las barras */
+    }
     .titulo {
         font-size: 1.2rem;
     }
@@ -391,6 +423,56 @@ input[type="checkbox"]:checked ~ nav ul li:nth-child(7) {
 
 /* Media Query para pantallas de máximo 480px */
 @media (max-width: 480px) {
+
+    .offcanvas-menu > label.toogle-open {
+        width: 20px; /* Ajusta el ancho del botón */
+        height: 20px; /* Ajusta la altura del botón */
+        top: 30px; /* Ajusta la posición superior */
+        left: 30px; /* Ajusta la posición izquierda */
+      }
+    
+    .offcanvas-menu > label.toogle-open span,
+    .offcanvas-menu > label.toogle-open span::before,
+    .offcanvas-menu > label.toogle-open span::after {
+        height: 3px; /* Ajusta el grosor de las barras */
+        width: 24px; /* Ajusta el ancho de las barras */
+      }
+
+
+    .offcanvas-menu > label span::before {
+        transform: translateY(-8px); /* Reduce la separación superior */
+    }
+    .offcanvas-menu > label span::after {
+        transform: translateY(8px); /* Reduce la separación inferior */
+    }
+
+
+    .offcanvas-menu nav {
+        width: 200px; /* Reduce aún más el ancho del menú */
+        left: -200px; /* Ajusta la posición para que el menú esté fuera de la vista */
+        padding: 20px 15px; /* Reduce el padding interno del menú */
+    }
+
+    .offcanvas-menu nav > div a {
+        font-size: 1.8rem; /* Reduce el tamaño de la fuente */
+    }
+
+    .offcanvas-menu nav ul li a {
+        font-size: 1.8rem; /* Ajusta el tamaño de la fuente de los elementos del menú */
+    }
+
+    .offcanvas-menu nav label {
+        width: 20px; /* Reduce aún más el ancho del botón */
+        height: 20px; /* Reduce aún más la altura del botón */
+    }
+
+    .offcanvas-menu nav label span,
+    .offcanvas-menu nav label span::before,
+    .offcanvas-menu nav label span::after {
+        height: 2px; /* Mantén el grosor de las barras del tamaño más pequeño */
+        width: 20px; /* Reduce el ancho de las barras para adaptarse al tamaño del botón */
+    }
+
     .card-container {
       display: flex;
       flex-wrap: wrap; /* Permite que las cards se envuelvan en varias filas */

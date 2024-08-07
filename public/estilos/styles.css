@@ -27,7 +27,7 @@ header {
     top: 0; /* Posición superior */
     left: 0; /* Alinea el header con el borde izquierdo */
     width: 100%; /* Asegura que el header tenga el ancho completo de la página */
-    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+    z-index: 9999; /* Asegura que el header esté por encima de otros elementos */
     box-shadow: inset;
 }
 
@@ -122,9 +122,10 @@ li {
     height: calc(100% - 120px); /* Calcula la altura restante de la pantalla */
     left: -350px; /* O lo que necesites según el diseño */
     overflow: hidden;
-    background: #FFD4DB;
+    background: linear-gradient(to bottom, #FFD4DB 30%, #FA86A6 110%);
     transition: 0.3s ease;
     padding: 40px 30px;
+    z-index: 9999;
 }   
 
 .offcanvas-menu nav > div {
@@ -139,7 +140,7 @@ li {
     display: flex;
     align-items: center;
     font-family: "Monoton", cursive;
-    background: linear-gradient(-90deg, #49a4ed 30%, #3d00a9 110%);
+    background: linear-gradient(-90deg, #FFD4DB 30%, #E16C8C 110%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent; /* Asegúrate de que el texto sea transparente */
@@ -147,7 +148,7 @@ li {
 
 .offcanvas-menu nav i {
     font-size: 4rem;
-    background: linear-gradient(120deg, #49a4ed 30%, #3d00a9 110%);
+    background: linear-gradient(120deg, #FFD4DB 30%, #E16C8C 110%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent; /* Asegúrate de que el texto sea transparente */
@@ -258,6 +259,32 @@ input[type="checkbox"]:checked ~ nav ul li:nth-child(6) {
 input[type="checkbox"]:checked ~ nav ul li:nth-child(7) {
     transition-delay: 0.7s;
 }
+
+/* CSS para el overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro con transparencia */
+    z-index: 9998; /* Justo por debajo del menú */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+/* Cuando el menú está abierto */
+input[type="checkbox"]:checked ~ .menu-overlay {
+    opacity: 1;
+    visibility: visible;
+   
+}
+
+input[type="checkbox"]:checked ~ nav {
+    left: 0;
+}
+
 
 .card-container {
     display: flex;
@@ -405,12 +432,14 @@ input[type="checkbox"]:checked ~ nav ul li:nth-child(7) {
     
     .title-card {
         font-size: 14px; /* Ajusta el tamaño de la fuente */
+        margin: 10px auto;
       }
     
     .description-card {
         font-size: 11px; /* Ajusta el tamaño del texto de la descripción */
         margin-left: 5px; /* Ajusta el margen izquierdo */
         height: 30px;
+        margin: 10px;
       }
     
     .price-card {
@@ -475,6 +504,7 @@ input[type="checkbox"]:checked ~ nav ul li:nth-child(7) {
         width: 20px; /* Reduce el ancho de las barras para adaptarse al tamaño del botón */
     }
 
+
     .card-container {
       display: flex;
       flex-wrap: wrap; /* Permite que las cards se envuelvan en varias filas */
@@ -502,10 +532,14 @@ input[type="checkbox"]:checked ~ nav ul li:nth-child(7) {
     
     .title-card {
         width: 100%; /* Asegura que el contenido interno ocupe el ancho completo de la card */
+        height: 10px;
+        font-size: 12px;
+        margin: 8px auto;
       } 
     .description-card {
         width: 100%; /* Asegura que el contenido interno ocupe el ancho completo de la card */
         height: 20px;
+        margin: 8px auto;
       } 
     .price-card {
         padding: 10px; /* Ajusta el padding según sea necesario */
@@ -516,7 +550,7 @@ input[type="checkbox"]:checked ~ nav ul li:nth-child(7) {
         display: flex; /* Usa flexbox para el contenedor */
         align-items: center; /* Centra verticalmente el contenido */
         justify-content: flex-start; /* Alinea el contenido a la izquierda */
-        height: 30px; /* Asegura suficiente altura para centrar verticalmente */
+        height: 25px; /* Asegura suficiente altura para centrar verticalmente */
     }
     
     

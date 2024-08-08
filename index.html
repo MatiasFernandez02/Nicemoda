@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="public/estilos/styles.css">
     <title>Nice Moda</title>
 </head>
 <body>
   <header>
-    <div class="offcanvas-menu">
+    <div id="menu" class="offcanvas-menu">
       <input type="checkbox" id="toogle-menu" />
       <!-- Overlay -->
-      <div class="menu-overlay"></div>
+      <div id="overlay" class="menu-overlay"></div>
       <label for="toogle-menu" class="toogle-open"><span></span></label>
   
       <nav>
@@ -32,13 +32,21 @@
       </nav>
     </div>
     <a href="index.html" class="titulo"><h1>NICE MODA</h1></a>
-    <div class="iconos-header">
-      <a href="#"><i class="fas fa-user"></i></a>
-      <a href="#"><i class="fas fa-shopping-cart"></i></a>
-    </div>
+    <ul class="iconos-header">
+      <li class="filled"><a href="#"><i class="fas fa-user"></i></a></li>
+      <li class="filled"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+    </ul>
     
   </header>
   
+  <div class="carousel">
+    <div class="carousel-slides">
+        <div class="slide"><img src="public/imagenes/Imagen de WhatsApp 2023-11-16 a las 16.23.10_4b32d4ad.jpg" alt="Imagen 1"></div>
+        <div class="slide"><img src="public/imagenes/Imagen de WhatsApp 2023-11-16 a las 17.08.38_43856066.jpg" alt="Imagen 2"></div>
+        <div class="slide"><img src="public/imagenes/Imagen de WhatsApp 2023-11-16 a las 17.20.07_e8b34886.jpg" alt="Imagen 3"></div>
+    </div>
+  </div>
+
   <main>
     <div class="card-container">
       <div class="card">
@@ -213,8 +221,37 @@
   </main>
   
   <footer>
-    
+    <div class="footer-container">
+      <div class="footer-links">
+        <h4>Enlaces Rápidos</h4>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Productos</a></li>
+          <li><a href="#">Como Comprar</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Agregar Productos</a></li>
+        </ul>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2024 NICE MODA. Todos los derechos reservados.</p>
+        <p>Dirección: Calle Francia 2191, Caleta Olivia, Santa Cruz</p>
+        <p>Email: contacto@nicemoda.com</p>
+        <p>Teléfono: +123 456 7890</p>
+      </div>
+      <div class="footer-social">
+        <h4>Síguenos</h4>
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
   </footer>
+
+  <a href="https://wa.me/5492975265538?text=¡Hola! ¿Cómo puedo obtener más información sobre tus productos?" class="whatsapp-icon" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   <script src="scripts.js "></script>
 </body>

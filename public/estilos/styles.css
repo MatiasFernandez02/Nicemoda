@@ -286,6 +286,30 @@ input[type="checkbox"]:checked ~ nav {
 }
 
 
+/* Estilos del carrusel */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    flex: 0 0 100%;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+}
+
+
+
 .card-container {
     display: flex;
     justify-content: center; /* Centra las cards horizontalmente */
@@ -339,10 +363,80 @@ input[type="checkbox"]:checked ~ nav {
 }
 
 
+footer {
+    background-color: #FFD4DB;
+    padding: 40px 20px;
+    color: #1a1a1a;
+    text-align: center;
+    font-size: 1.4rem;
+}
 
-/* CSS base */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 18px;
+}
 
-/* El código CSS que ya tienes se mantiene aquí */
+.footer-info, .footer-links, .footer-social {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-info p, .footer-links ul, .footer-social ul {
+    margin: 10px 0;
+}
+
+.footer-links ul, .footer-social ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a, .footer-social a {
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    color: #E16C8C;
+}
+
+.footer-social ul {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.footer-social i {
+    font-size: 2rem;
+    transition: color 0.3s;
+}
+
+.footer-social i:hover {
+    color: #E16C8C;
+}
+/* Estilo para el ícono de WhatsApp flotante */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    background-color: transparent;
+    color: #25D366;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    transition: color 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+    color: #128C7E;
+}
+
+
 
 @media screen and (max-width: 768px) {
     body {
@@ -415,6 +509,10 @@ input[type="checkbox"]:checked ~ nav {
         font-size: 2.2rem;
     }
 
+    .carousel {
+        top: -20px;
+    }
+
     .card-container {
         margin: 20px;
       }
@@ -448,13 +546,24 @@ input[type="checkbox"]:checked ~ nav {
         margin-left: 5px; /* Ajusta el margen izquierdo */
         height: 40px;
       }
+
+
+    .footer-container {
+        font-size: 14px;
     }
 
-
-
+    .whatsapp-icon {
+        font-size: 3rem; /* Ajusta el tamaño del ícono */
+        bottom: 30px; /* Ajusta la distancia desde el fondo */
+        right: 30px; /* Ajusta la distancia desde la derecha */
+    }
+    }
 /* Media Query para pantallas de máximo 480px */
 @media (max-width: 480px) {
 
+    main {
+        margin-bottom: 20px;
+    }
     .offcanvas-menu > label.toogle-open {
         width: 20px; /* Ajusta el ancho del botón */
         height: 20px; /* Ajusta la altura del botón */
@@ -553,6 +662,13 @@ input[type="checkbox"]:checked ~ nav {
         height: 25px; /* Asegura suficiente altura para centrar verticalmente */
     }
     
+    .footer-container {
+        font-size: 12px;
+    }
     
-    
+    .whatsapp-icon {
+        font-size: 2.5rem; /* Ajusta el tamaño del ícono */
+        bottom: 20px; /* Ajusta la distancia desde el fondo */
+        right: 20px; /* Ajusta la distancia desde la derecha */
+    }
 }

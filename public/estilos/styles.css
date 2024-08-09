@@ -321,7 +321,7 @@ input[type="checkbox"]:checked ~ nav {
 
 .card {
     background: #fff;
-    border-radius: 5px;
+    border-radius: 8px;
     display: inline-block;
     height: 700px;
     margin: 1rem;
@@ -349,18 +349,46 @@ input[type="checkbox"]:checked ~ nav {
     margin: 0;
     width: 100%;
     height: 62px;
-    margin-bottom: 15px;
     margin-left: 15px;
 }
 
-.price-card {
-    padding: 25px 0 5px;
+.price-cart-container {
+    height: 55px;
+    display: flex;
+    justify-content: space-between; /* Distribuye el precio y el carrito en extremos opuestos */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 0 15px; /* Añade un poco de espacio a los lados */
     border-top: 1px solid #ddd;
-    font-size:18px;
-    font-weight:bold;
-    margin-left: 5px;
-    height: 60px;
 }
+
+.price-card {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart-card {
+    font-size: 1.5rem; /* Ajusta el tamaño de fuente del botón */
+}
+
+.add-to-cart-button {
+    display: flex;
+    align-items: center;
+    background-color: #E16C8C; /* Color de fondo del botón */
+    color: #ffffff;
+    padding: 8px 12px; /* Ajusta el padding del botón */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+    background-color: #d15875; /* Color de fondo al pasar el mouse */
+}
+
+.add-to-cart-button i {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
 
 
 footer {
@@ -514,40 +542,50 @@ footer {
     }
 
     .card-container {
-        margin: 20px;
-      }
-    
+        margin: 15px; /* Reduce el margen alrededor del contenedor */
+    }
+
     .card {
-        width: calc(33.33% - 20px); /* Ajusta el ancho de las cards para que entren 3 en una fila, restando espacio para el margen */
-        height: auto; /* Ajusta la altura automáticamente */
-      }
-    
+        width: 100%; /* Ajusta el ancho de la card para que ocupe el 100% del contenedor */
+        max-width: 350px; /* Limita el ancho máximo de la card */
+        height: auto; /* Ajusta la altura automáticamente según el contenido */
+    }
+
     .img-card {
-        height: auto; /* Ajusta la altura de la imagen automáticamente */
-        width: calc(100% - 20px); /* Asegura que la imagen se ajuste al nuevo tamaño de la card */
-        display: block;
-      }
-    
+        width: calc(100% - 10px); /* Restamos 4px al ancho total para tener 2px a cada lado */
+        height: 380px; /* Ajusta la altura de la imagen */
+        margin: 5px; /* Ajusta el margen alrededor de la imagen */
+    }
+
     .title-card {
-        font-size: 14px; /* Ajusta el tamaño de la fuente */
-        margin: 10px auto;
-      }
-    
+        margin: 8px auto;
+        font-size: 18px; /* Reduce el tamaño de fuente del título */
+    }
+
     .description-card {
-        font-size: 11px; /* Ajusta el tamaño del texto de la descripción */
-        margin-left: 5px; /* Ajusta el margen izquierdo */
-        height: 30px;
-        margin: 10px;
-      }
-    
+        height: 20px; /* Ajusta la altura automáticamente según el contenido */
+        margin-left: 10px; /* Ajusta el margen izquierdo */
+    }
+
+    .price-cart-container {
+        height: 50px; /* Ajusta la altura del contenedor */
+        padding: 0 10px; /* Ajusta el padding */
+    }
+
     .price-card {
-        font-size: 14px; /* Reduce el tamaño de la fuente del precio */
-        padding: 10px 0; /* Ajusta el padding */
-        margin-left: 5px; /* Ajusta el margen izquierdo */
-        height: 40px;
-      }
+        font-size: 16px; /* Reduce el tamaño de fuente del precio */
+    }
 
+    .cart-card {
+        font-size: 1.2rem; /* Ajusta el tamaño de fuente del botón */
+    }
 
+    .add-to-cart-button {
+        font-size: 14px; /* Reduce el tamaño de fuente del botón */
+        padding: 6px 10px; /* Ajusta el padding del botón */
+    }
+    
+      
     .footer-container {
         font-size: 14px;
     }
@@ -615,53 +653,50 @@ footer {
 
 
     .card-container {
-      display: flex;
-      flex-wrap: wrap; /* Permite que las cards se envuelvan en varias filas */
-      gap: 10px; /* Espacio entre las cards */
-      margin: 0; /* Elimina el margen alrededor del contenedor */
+        margin: 10px; /* Reduce aún más el margen alrededor del contenedor */
     }
-  
+
     .card {
-      flex: 1 1 calc(33.33% - 20px); /* Ajusta para 3 cards por fila, restando el espacio del gap */
-      max-width: calc(33.33% - 20px); /* Ancho máximo para mantener 3 cards por fila */
-      aspect-ratio: 1 / 1.6; /* Mantiene la proporción de aspecto */
-      margin: 0; /* Elimina el margen alrededor de las cards */
-      box-sizing: border-box; /* Incluye padding y border en el ancho total */
-      padding: 10px; /* Espacio interno dentro de cada card */
+        width: 100%; /* Ajusta el ancho de la card para que ocupe el 100% del contenedor */
+        max-width: 300px; /* Limita el ancho máximo de la card */
+        height: auto; /* Ajusta la altura automáticamente según el contenido */
     }
-    
+
     .img-card {
-      width: 100%; /* Imagen ocupa todo el ancho de la card */
-      height: auto; /* Mantiene la proporción de la imagen */
-      max-height: 200px; /* Limita la altura máxima para evitar que la imagen se achique demasiado */
-      object-fit: cover; /* Ajusta la imagen para cubrir el área sin distorsión */
-      display: block;
-      margin: 0 auto; /* Asegura que la imagen esté centrada */
+        width: calc(100% - 4px); /* Restamos 4px al ancho total para tener 2px a cada lado */
+        height: 300px; /* Ajusta la altura de la imagen */
+        margin: 2px; /* Ajusta el margen alrededor de la imagen */
     }
-    
+
     .title-card {
-        width: 100%; /* Asegura que el contenido interno ocupe el ancho completo de la card */
-        height: 10px;
-        font-size: 12px;
-        margin: 8px auto;
-      } 
-    .description-card {
-        width: 100%; /* Asegura que el contenido interno ocupe el ancho completo de la card */
-        height: 20px;
-        margin: 8px auto;
-      } 
-    .price-card {
-        padding: 10px; /* Ajusta el padding según sea necesario */
-        border-top: 1px solid #ddd;
-        font-size: 12px; /* Ajusta el tamaño de la fuente del precio */
-        font-weight: bold;
-        margin: 0; /* Elimina el margen alrededor del contenedor */
-        display: flex; /* Usa flexbox para el contenedor */
-        align-items: center; /* Centra verticalmente el contenido */
-        justify-content: flex-start; /* Alinea el contenido a la izquierda */
-        height: 25px; /* Asegura suficiente altura para centrar verticalmente */
+        font-size: 16px; /* Reduce el tamaño de fuente del título */
     }
-    
+
+    .description-card {
+        font-size: 13px;
+        height: 15; /* Ajusta la altura automáticamente según el contenido */
+        margin-left: 5px; /* Ajusta el margen izquierdo */
+    }
+
+    .price-cart-container {
+        height: 45px; /* Ajusta la altura del contenedor */
+        padding: 0 5px; /* Ajusta el padding */
+    }
+
+    .price-card {
+        font-size: 13px; /* Reduce el tamaño de fuente del precio */
+    }
+
+    .cart-card {
+        font-size: 0.8rem; /* Ajusta el tamaño de fuente del botón */
+    }
+
+    .add-to-cart-button {
+        height: 25px;
+        font-size: 11px; /* Reduce el tamaño de fuente del botón */
+        padding: 4px 8px; /* Ajusta el padding del botón */
+    }
+
     .footer-container {
         font-size: 12px;
     }
